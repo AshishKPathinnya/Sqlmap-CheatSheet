@@ -15,9 +15,11 @@ TABLE OF CONTENTS
 8. Advanced & OS Access
 9. Bug Bounty Pro-Mode Flags
 10. Complete Workflow Examples
+
+    
 ================================================================================
 1. TARGET SPECIFICATION
-================================================================================
+
 Defining what you are attacking.
 Basic URL Scan (GET parameter):
 --------------------------------
